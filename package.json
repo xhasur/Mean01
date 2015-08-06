@@ -1,0 +1,26 @@
+{
+  "name": "mean01",
+  "version": "1.0.0",
+  "description": "Proyecto Mean JS ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhasur/Mean01.git"
+  },
+  "author": "andreslopez.exe@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xhasur/Mean01/issues"
+  },
+  "homepage": "https://github.com/xhasur/Mean01#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "express-logger": "0.0.3",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.1"
+  }
+}
