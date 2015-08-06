@@ -1,12 +1,16 @@
 /**
- * Created by OscarAndres on 06/08/2015.
+ * Created by andreslopez.exe@gmail.com
  */
 (function () {
     "use strict";
     module.exports = function (mongoose) {
         var schema = mongoose.Schema,
-            entitySchema = new schema({
-                "name": {
+            personaSchema = new schema({
+                "nombre": {
+                    "type": String,
+                    "required": true
+                },
+                "apellido": {
                     "type": String,
                     "required": true
                 },
@@ -14,13 +18,15 @@
                     "type": Date
                 }
             });
-        entitySchema.pre("save", function (next) {
+
+        //antes de-
+        personaSchema.pre("save", function (next) {
             var self = this;
             if (self.isNew) {
                 self.date = Date.now()
             }
             next();
         });
-        return mongoose.model("entity", entitySchema);
+        return mongoose.model("persona", personaSchema);
     };
 }());

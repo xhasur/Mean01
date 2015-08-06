@@ -1,47 +1,37 @@
-<html lang="en" ng-app="angularTodo">
+<!doctype html>
+<html lang="en" ng-app="App">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="pragma" content="no-cache" />
-    <title>Mean</title>
+    <title>Test</title>
 </head>
-<body ng-controller="mainController">
-<div class="container">
-
-    <div class="jumbotron text-center">
-        <h1>List <span class="label label-info">{{ todos.length }}</span></h1>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#/persona">Person</a></li>
+        </ul>
+        <br>
+        <br>
+        <br>
+    </nav>
+</header>
+</head>
+<body>
+    <div id="main">
+        <div ng-view></div>
     </div>
 
+<link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css">
 
-    <div id="todo-list" class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-            <div class="checkbox" ng-repeat="todo in todos">
-                <label>
-                    <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-                </label>
-            </div>
-        </div>
-    </div>
+<script src="bower/jquery/dist/jquery.js"></script>
+<script src="bower/angular/angular.js"></script>
+<script src="bower/angular-route/angular-route.js"></script>
 
-    <div id="todo-form" class="row">
-    <div class="col-sm-8 col-sm-offset-2 text-center">
-        <form>
-            <div class="form-group">
-                <input type="text" class="form-control input-lg text-center"
-                       placeholder="Inserta una tarea nueva"
-                       ng-model="formData.text">
-            </div>
-            <button class="btn btn-primary btn-lg"
-                    ng-click="createTodo()">Añadir</button>
-        </form>
-    </div>
-</div>
-</div>
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-<script src="../bower_components/jquery/dist/jquery.js"></script>
-<script src="../bower_components/angular/angular.js"></script>
-<script src="../config/main.js"></script>
+<script src="/js/config/main.js"></script>
+<script src="/js/config/router/router.js"></script>
+<script src="/js/app/persona/controller/ControllerPersona.js"></script>
 </body>
-</html>  
+</html>
