@@ -1,40 +1,42 @@
-angular.module("App").controller('ControllerPersona',ControllerPersona);
+angular.module("App").controller('ControllerPersona', ControllerPersona);
 
 function ControllerPersona($scope, $http, $log) {
 
     $scope.persona = {};
 
-    $scope.listar= function(){
+    $scope.listar = function () {
         $http.get('/api/persona/listar')
-            .success(function(data) {
+            .success(function (data) {
                 $scope.persona.todos = data.result;
             })
-            .error(function(data) {
+            .error(function (data) {
                 console.log('Error: ' + data);
             });
-        }
+    }
 
-        $scope.guardar = function(){
-            console.log("entro");
-            $http.post('/api/persona/insertar', $scope.persona)
-                .success(function(data) {
-                    $scope.persona.todos = {};
-                    $scope.persona.todos = data;
-                })
-                .error(function(data) {
-                    console.log('Error:' + data);
-                });
-        };
+    $scope.guardar = function () {
+        var objectPerson = new Object();
+        objectPerson.persona = $scope.persona;
+        console.log(objectPerson);
+        $http.post('/api/persona/insertar', objectPerson)
+            .success(function (data) {
+                console.log("se guardo corectamente");
+            })
+            .error(function (data) {
+                console.log('Error:' + data);
+            });
+    };
 
 
-        $scope.deleteTodo = function(id) {
-            $http.delete('/api/todos/' + id)
-                .success(function(data) {
-                    $scope.todos = data;
-                })
-                .error(function(data) {
-                    console.log('Error:' + data);
-                });
-        };
+    $scope.deletePersona = function (id) {
+        console.log("-->"+id)
+        $http.delete('/api/persona/eliminar/' + id)
+            .success(function (data) {
+                console.log("Se elimino correctamente");
+            })
+            .error(function (data) {
+                console.log('Error:' + data);
+            });
+    };
 
 }

@@ -20,6 +20,9 @@ var personaController = require("./controllers/personaController.js")(express, p
 /*endpoints*/
 app.use("/api/persona", personaController);
 
+
+
+
 app.get("/", function (req,res) {
     res.sendfile("./public/index.html");
 })
