@@ -2,15 +2,20 @@
     "use strict";
     function routerConf ($routeProvider) {
         $routeProvider
-            .when('/persona',
+            .when('/',
+            {
+                templateUrl : '/js/app/login/views/login.html',
+                controller : 'ControllerLogin'
+            })
+            .when('/registro',
             {
                 templateUrl : '/js/app/persona/views/persona.html',
                 controller : 'ControllerPersona'
             })
-            .when('/login',
+            .when('/principal',
             {
-                templateUrl : '/js/app/login/views/login.html',
-                controller : 'ControllerLogin'
+                templateUrl : '/js/app/persona/views/persona.html',
+                controller : 'ControllerPersona'
             })
             .otherwise(
             {

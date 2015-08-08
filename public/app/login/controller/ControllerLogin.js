@@ -1,10 +1,18 @@
 angular.module("App").controller('ControllerLogin', ControllerLogin);
 
-function ControllerLogin($scope, $http, $log) {
+function ControllerLogin($scope, $http, $log,$location) {
 
     $scope.login = {};
 
     $scope.login = function ($varAuth) {
-        alert($varAuth.usuario+" y pwd "+$varAuth.password);
+        $log.info($varAuth.usuario+" y pwd "+$varAuth.password);
+        $location.path("/principal");
+
+
+    }
+    
+    $scope.limpiar= function ($varAuth) {
+        $varAuth.usuario="";
+        $varAuth.password="";
     }
 }
