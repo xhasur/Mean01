@@ -5,7 +5,14 @@ angular.module("App").factory('AllResource',function($resource){
                 method: 'GET',
                 isArray:false
             }
-         })
+         }),
+        guardarPersonas:$resource('/api/persona/listar',{},{
+            guardar:{
+                method:'POST',
+                headers:{'Content-Type':'application/json; charset=UTF-8',
+                    'Accept':'application/json'}
+            }
+        })
     };
     return factory;
 });

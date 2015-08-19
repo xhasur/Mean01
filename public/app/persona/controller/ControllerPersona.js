@@ -37,6 +37,8 @@ function ControllerPersona($scope, $http, $log,$location,AllResource) {
         var objectPerson = new Object();
         objectPerson.persona = $scope.persona;
         console.log(objectPerson);
+
+        /*
         $http.post('/api/persona/insertar', objectPerson)
             .success(function (data) {
                 console.log("se guardo corectamente");
@@ -45,6 +47,22 @@ function ControllerPersona($scope, $http, $log,$location,AllResource) {
             .error(function (data) {
                 console.log('Error:' + data);
             });
+        */
+        AllResource.guardarPersonas.guardar(objectPerson,
+            function(data) {
+                console.log("se guardo corectamente");
+                $scope.listar();
+            },
+            function (err) {
+                $scope.habilitar=false;
+                if(err.status=='500'){
+
+                }else
+                {
+
+                }
+            }
+        );
     };
 
 

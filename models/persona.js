@@ -4,19 +4,12 @@
 (function () {
     "use strict";
     module.exports = function (mongoose) {
+
         var schema = mongoose.Schema,
             personaSchema = new schema({
-                "nombre": {
-                    "type": String,
-                    "required": true
-                },
-                "apellido": {
-                    "type": String,
-                    "required": true
-                },
-                "date": {
-                    "type": Date
-                }
+                "nombre"  : { type: String, required: true,unique: true},
+                "apellido": {"type": String,"required": true},
+                "date"    : {"type": Date}
             });
 
         //antes de-
@@ -27,6 +20,8 @@
             }
             next();
         });
+
+
         return mongoose.model("persona", personaSchema);
     };
 }());
