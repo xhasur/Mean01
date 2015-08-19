@@ -1,19 +1,36 @@
 angular.module("App").controller('ControllerPersona', ControllerPersona);
 
-function ControllerPersona($scope, $http, $log,$location) {
+function ControllerPersona($scope, $http, $log,$location,AllResource) {
 
     $scope.persona = {};
 
     $scope.listar = function () {
-        $http.get('/api/persona/listar')
-            .success(function (data) {
-                $scope.persona.todos = data.result;
-                angular.element("listaPersonas");
-                $( "#listaPersonas" ).show();
-            })
-            .error(function (data) {
-                console.log('Error: ' + data);
-            });
+           /*
+            $http.get('/api/persona/listar')
+                .success(function (data) {
+                    $scope.persona.todos = data.result;
+                    angular.element("listaPersonas");
+                    $( "#listaPersonas" ).show();
+                })
+                .error(function (data) {
+                    console.log('Error: ' + data);
+                });
+             */
+        AllResource.listarPersonas.listar(
+                function(data) {
+
+                    $scope.persona.todos = data.result;
+                    angular.element("listaPersonas");
+                    $( "#listaPersonas" ).show();
+
+                },function (err) {
+                    if(err.status=='500'){
+                    }
+                    else{
+                        console.log('Error: ' + data);
+                    }
+                });
+
     }
 
     $scope.guardar = function () {
