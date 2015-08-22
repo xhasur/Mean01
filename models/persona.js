@@ -7,7 +7,7 @@
 
         var schema = mongoose.Schema,
             personaSchema = new schema({
-                "nombre"  : { type: String, required: true,unique: true},
+                "nombre"  : {"type": String, "required": true,"unique": true},
                 "apellido": {"type": String,"required": true},
                 "date"    : {"type": Date}
             });

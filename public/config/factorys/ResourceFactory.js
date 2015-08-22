@@ -6,7 +6,7 @@ angular.module("App").factory('AllResource',function($resource){
                 isArray:false
             }
          }),
-        guardarPersonas:$resource('/api/persona/listar',{},{
+        guardarPersonas:$resource('/api/persona/insertar',{},{
             guardar:{
                 method:'POST',
                 headers:{'Content-Type':'application/json; charset=UTF-8',

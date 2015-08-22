@@ -25,6 +25,7 @@ function ControllerPersona($scope, $http, $log,$location,AllResource) {
 
                 },function (err) {
                     if(err.status=='500'){
+                        console.log('Error de servicio');
                     }
                     else{
                         console.log('Error: ' + data);
@@ -54,12 +55,11 @@ function ControllerPersona($scope, $http, $log,$location,AllResource) {
                 $scope.listar();
             },
             function (err) {
-                $scope.habilitar=false;
                 if(err.status=='500'){
-
+                    console.log('Error de servicio');
                 }else
                 {
-
+                    console.log('Error:' + data);
                 }
             }
         );
