@@ -23,10 +23,12 @@ app.use("/api/persona", personaController);
 
 
 
-
 app.get("/", function (req,res) {
     res.sendfile("./public/index.html");
 })
+
+
+
 
 servidor = app.listen(8080, function () {
     console.log("Arrancado server" );

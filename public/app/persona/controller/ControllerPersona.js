@@ -3,7 +3,6 @@ angular.module("App").controller('ControllerPersona', ControllerPersona);
 function ControllerPersona($scope, $http, $log,$location,AllResource) {
 
     $scope.persona = {};
-
     $scope.listar = function () {
            /*
             $http.get('/api/persona/listar')
