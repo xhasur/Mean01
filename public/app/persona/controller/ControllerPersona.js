@@ -2,6 +2,7 @@ angular.module("App").controller('ControllerPersona', ControllerPersona);
 
 function ControllerPersona($scope, $http, $log,$location,AllResource) {
 
+    //prueba
     $scope.persona = {};
     $scope.listar = function () {
            /*
