@@ -6,6 +6,8 @@ var logger = require('express-logger');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+
+console.log(__dirname);
 app.use("/js", express.static(__dirname + '/public'));
 app.use("/bower", express.static(__dirname + '/bower_components'));
 app.use(logger({path: "logfile.txt"}));
@@ -30,6 +32,6 @@ app.get("/", function (req,res) {
 
 
 
-servidor = app.listen(8080, function () {
+servidor = app.listen(3000, function () {
     console.log("Arrancado server" );
 });

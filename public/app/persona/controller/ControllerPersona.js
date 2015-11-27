@@ -2,6 +2,11 @@ angular.module("App").controller('ControllerPersona', ControllerPersona);
 
 function ControllerPersona($scope, $http, $log,$location,AllResource) {
 
+    var objeto = {  tipo: "laptop", marca: "apple", nombre: "macbook air" };
+localStorage.computador = objeto;
+alert(localStorage.computador);
+
+
     //prueba
     $scope.persona = {};
     $scope.listar = function () {

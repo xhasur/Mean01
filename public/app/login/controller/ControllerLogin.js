@@ -14,5 +14,6 @@ function ControllerLogin($scope, $http, $log,$location) {
     $scope.limpiar= function ($varAuth) {
         $varAuth.usuario="";
         $varAuth.password="";
+        console.log("");
     }
 }
