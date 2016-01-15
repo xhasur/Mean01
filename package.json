@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/xhasur/Mean01#readme",
   "dependencies": {
-    "body-parser": "^1.13.3",
+    "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "express-logger": "0.0.3",
     "method-override": "^2.3.5",
-    "mongoose": "^4.1.1"
+    "mongoose": "^4.3.5"
   }
 }
