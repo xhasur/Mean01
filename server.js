@@ -14,7 +14,7 @@ app.use(logger({path: "logfile.txt"}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({"extended": false}));
 
-mongoose.connect('mongodb://localhost:27017/Node');
+//mongoose.connect('mongodb://localhost:27017/Node');
 
 /*Model*/
 var personaModel = require("./models/persona.js")(mongoose);
